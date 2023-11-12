@@ -5,7 +5,7 @@
     [formGroup]="registerForm"
   >
     <h2 class="text-center text-2xl font-bold">
-      {{ "REGISTER.TITLE" }}
+      {{ "REGISTER" }}
     </h2>
     <div
       *ngIf="message"
@@ -19,7 +19,7 @@
       {{ "REGISTER." + message.message }}
     </div>
     <div class="flex flex-col space-y-2">
-      <label for="userName">{{ "REGISTER.USER_NAME" }}:</label>
+      <label for="userName">{{ "NOMBRE" }}:</label>
       <input
         class="p-2 border focus:border-indigo-500 outline-none border-indigo-100"
         id="userName"
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="flex flex-col space-y-2">
-      <label for="password">{{ "REGISTER.PASSWORD" }}:</label>
+      <label for="password">{{ "CONTRASEÑA" }}:</label>
       <input
         class="p-2 border focus:border-indigo-500 outline-none border-indigo-100"
         id="password"
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="flex flex-col space-y-2">
-      <label for="phone">{{ "REGISTER.PHONE_NUMBER" }}:</label>
+      <label for="phone">{{ "TELEFONO" }}:</label>
       <input
         class="p-2 border focus:border-indigo-500 outline-none border-indigo-100"
         id="phone"
@@ -76,7 +76,7 @@
       </div>
     </div>
     <div class="flex flex-col space-y-2">
-      <label for="email">{{ "REGISTER.EMAIL_ADDRESS" }}:</label>
+      <label for="email">{{ "CORREO" }}:</label>
       <input
         class="p-2 border focus:border-indigo-500 outline-none border-indigo-100"
         id="email"
@@ -95,7 +95,7 @@
       </div>
     </div>
     <div class="flex flex-col space-y-2">
-      <label for="address">{{ "REGISTER.ADDRESS" }}:</label>
+      <label for="address">{{ "DIRECCION" }}:</label>
       <input
         class="p-2 border focus:border-indigo-500 outline-none border-indigo-100"
         id="address"
@@ -136,7 +136,7 @@
         </div>
       </ng-template>
       <ng-container *ngIf="!isLoading; else loadingTemplate">{{
-        "ACTIONS.REGISTER"
+        "ACEPTAR"
       }}</ng-container>
     </button>
   </form>

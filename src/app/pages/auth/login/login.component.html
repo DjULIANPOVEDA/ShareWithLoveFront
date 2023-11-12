@@ -5,7 +5,7 @@
     [formGroup]="loginForm"
   >
     <h2 class="text-center text-2xl font-bold">
-      {{ "LOGIN.TITLE" }}
+      {{ "INICIO DE SESION" }}
     </h2>
     <div
       *ngIf="message"
@@ -19,7 +19,7 @@
       {{ "LOGIN." + message.message }}
     </div>
     <div class="flex flex-col space-y-2">
-      <label for="userName">{{ "LOGIN.USER_NAME" }}:</label>
+      <label for="userName">{{ "USUARIO" }}:</label>
       <input
         class="p-2 border focus:border-indigo-500 outline-none border-indigo-100"
         id="userName"
@@ -34,11 +34,11 @@
         "
         class="text-red-500"
       >
-        {{ "VALIDATORS.ISREQUIRED.USER_NAME" }}
+        {{ "VALIDANDO EL USUARIO" }}
       </div>
     </div>
     <div class="flex flex-col space-y-2">
-      <label for="password">{{ "LOGIN.PASSWORD" }}:</label>
+      <label for="password">{{ "CONTRASEÑA" }}:</label>
       <input
         class="p-2 border focus:border-indigo-500 outline-none border-indigo-100"
         id="password"
@@ -53,7 +53,7 @@
         "
         class="text-red-500"
       >
-        {{ "VALIDATORS.ISREQUIRED.PASSWORD" }}
+        {{ "VALIDANDO CONTRASEÑA" }}
       </div>
     </div>
     <button type="submit" class="btn-indigo w-full" [disabled]="isLoading">
@@ -79,7 +79,7 @@
         </div>
       </ng-template>
       <ng-container *ngIf="!isLoading; else loadingTemplate">{{
-        "ACTIONS.LOGIN"
+        "INGRESAR"
       }}</ng-container>
     </button>
   </form>

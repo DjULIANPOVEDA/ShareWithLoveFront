@@ -3,12 +3,12 @@
 >
   <nav class="flex space-x-3">
     <h2>ShareWithLove</h2>
-    <a routerLink="/" class="navlink">{{ "HEADER.BOOKS" }}</a>
+    <a routerLink="/" class="navlink">{{ "PRENDAS" }}</a>
     <a *ngIf="user | async" routerLink="/inventory" class="navlink">{{
-      "HEADER.INVENTORY"
+      "INVENTARIO"
     }}</a>
     <a *ngIf="user | async" routerLink="/reports" class="navlink">{{
-      "HEADER.REPORTS"
+      "REPORTES"
     }}</a>
   </nav>
   <div class="space-x-2 flex">
@@ -16,14 +16,14 @@
       class="flex space-x-2"
       *ngIf="!(user | async); else userHeader"
     >
-      <a routerLink="/auth/login" class="btn-indigo">Login</a>
-      <a routerLink="/auth/register" class="btn-indigo-alter">Register</a>
+      <a routerLink="/auth/login" class="btn-indigo">INICIO DE SESION </a>
+      <a routerLink="/auth/register" class="btn-indigo-alter">REGISTRO</a>
     </ng-container>
     <ng-template #userHeader class="flex space-x-2">
       <a routerLink="/user" class="my-auto hover:text-white cursor-pointer">
         {{ (user | async)?.username }}
       </a>
-      <button (click)="logout()" class="btn-indigo-alter">Logout</button>
+      <button (click)="logout()" class="btn-indigo-alter">CERRAR SESION</button>
     </ng-template>
   </div>
 </header>
