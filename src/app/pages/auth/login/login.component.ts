@@ -27,8 +27,6 @@ export class LoginComponent {
     this.isLoading = true;
     this.userService.loginUser(this.loginForm.value).subscribe(
       (res) => {
-        console.log(res);
-
         this.userService.login(res);
         this.isLoading = false;
       },

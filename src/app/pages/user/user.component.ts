@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cloth } from 'src/app/models/Cloth';
 import { User } from 'src/app/models/User';
@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
 })
-export class UserComponent {
+export class UserComponent implements OnInit {
   user: User | undefined;
   cloths: Cloth[] = [];
   clothsDonate: Cloth[] = [];

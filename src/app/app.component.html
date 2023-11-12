@@ -1,5 +1,5 @@
 <header
-  class="flex justify-between bg-indigo-600 p-5 items-center text-slate-200"
+  class="flex justify-between bg-teal-600 p-5 items-center text-slate-200"
 >
   <nav class="flex space-x-3">
     <h2>ShareWithLove</h2>
@@ -16,14 +16,14 @@
       class="flex space-x-2"
       *ngIf="!(user | async); else userHeader"
     >
-      <a routerLink="/auth/login" class="btn-indigo">INICIO DE SESION </a>
-      <a routerLink="/auth/register" class="btn-indigo-alter">REGISTRO</a>
+      <a routerLink="/auth/login" class="btn-teal">INICIO DE SESION </a>
+      <a routerLink="/auth/register" class="btn-teal-alter">REGISTRO</a>
     </ng-container>
     <ng-template #userHeader class="flex space-x-2">
       <a routerLink="/user" class="my-auto hover:text-white cursor-pointer">
         {{ (user | async)?.username }}
       </a>
-      <button (click)="logout()" class="btn-indigo-alter">CERRAR SESION</button>
+      <button (click)="logout()" class="btn-teal-alter">CERRAR SESION</button>
     </ng-template>
   </div>
 </header>

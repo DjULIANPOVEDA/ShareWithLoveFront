@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ClothWithUser } from 'src/app/models/Cloth';
@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.css'],
 })
-export class InventoryComponent {
+export class InventoryComponent implements OnInit {
   @ViewChild('inputSearch') inputSearch!: ElementRef;
   user: Observable<User | undefined>;
   cloths: ClothWithUser[] = [];
@@ -28,6 +28,8 @@ export class InventoryComponent {
       if (!user) this.router.navigate(['/']);
     });
     this.clothService.getStockCloths().subscribe((cloths) => {
+      console.log(cloths);
+
       this.cloths = cloths;
       this.clothsFiltered = cloths;
     });
