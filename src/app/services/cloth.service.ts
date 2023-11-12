@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { Cloth, ClothWithUser } from '../models/Cloth';
+import { ReportModel } from '../models/ReportModel';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +23,7 @@ export class ClothService {
   }
 
   getAllCloths(): Observable<Cloth[]> {
-    return this.http.get<Cloth[]>(`${this.apiUrl}/Cloth`);
+    return this.http.get<Cloth[]>(`${this.apiUrl}/Clothes`);
   }
   getClothsByUser(): Observable<Cloth[]> {
     const token = this.cookieService.get('Token');
@@ -48,19 +49,19 @@ export class ClothService {
 
   registerCloth(Cloth: Cloth): Observable<boolean> {
     const token = this.cookieService.get('Token');
-    return this.http.post<boolean>(`${this.apiUrl}/Cloth`, Cloth, {
+    return this.http.post<boolean>(`${this.apiUrl}/Clothes`, Cloth, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       }),
     });
   }
 
-  /* reporte(): Observable<Reporte> {
+  report(): Observable<ReportModel> {
     const token = this.cookieService.get('Token');
-    return this.http.get<Reporte>(`${this.apiUrl}/Clothes/Reporte`, {
+    return this.http.get<ReportModel>(`${this.apiUrl}/Clothes/Report`, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       }),
     });
-  } */
+  }
 }

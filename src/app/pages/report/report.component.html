@@ -1,0 +1,8 @@
+<div class="flex flex-col justify-center items-center mt-6 space-y-16">
+  <div class="flex justify-center items-center space-x-16">
+    <div *ngIf="report" class="flex flex-col w-64 justify-center items-center">
+      <h4 class="text-xl font-semibold">{{ "REPORTS.VVL" }}</h4>
+      <app-aviable-clothes [report]="report"></app-aviable-clothes>
+    </div>
+  </div>
+</div>

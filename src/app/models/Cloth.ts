@@ -9,5 +9,6 @@ export interface Cloth {
 }
 
 export interface ClothWithUser extends Cloth {
-  usuario: User;
+  owner: User;
+  donate: User;
 }
