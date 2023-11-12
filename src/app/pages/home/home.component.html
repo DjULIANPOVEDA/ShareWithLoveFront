@@ -3,12 +3,12 @@
     <input
       type="text"
       [placeholder]="'BUSCAR'"
-      class="text-black outline-none focus:ring-2 focus:ring-indigo-900 text-lg pl-2"
+      class="text-black outline-none focus:ring-2 focus:ring-teal-900 text-lg pl-2"
       (keyup)="filterList()"
       #inputSearch
     />
     <button
-      class="text-white bg-indigo-600 hover:bg-indigo-800 p-2 rounded-lg flex"
+      class="text-white bg-teal-600 hover:bg-teal-800 p-2 rounded-lg flex"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@
                 denyButtonText: 'BUY.DENY',
               }"
               (confirm)="receivecloth(cloth.id ?? '')"
-              class="bg-indigo-400 text-white py-1 px-4 rounded-lg hover:bg-indigo-700 flex space-x-2 text-sm font-semibold justify-center items-center"
+              class="bg-teal-400 text-white py-1 px-4 rounded-lg hover:bg-teal-700 flex space-x-2 text-sm font-semibold justify-center items-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -21,7 +21,7 @@
     <div class="flex flex-col space-y-2">
       <label for="userName">{{ "USUARIO" }}:</label>
       <input
-        class="p-2 border focus:border-indigo-500 outline-none border-indigo-100"
+        class="p-2 border focus:border-teal-500 outline-none border-teal-100"
         id="userName"
         formControlName="userName"
         type="text"
@@ -40,7 +40,7 @@
     <div class="flex flex-col space-y-2">
       <label for="password">{{ "CONTRASEÑA" }}:</label>
       <input
-        class="p-2 border focus:border-indigo-500 outline-none border-indigo-100"
+        class="p-2 border focus:border-teal-500 outline-none border-teal-100"
         id="password"
         formControlName="password"
         type="password"
@@ -56,7 +56,7 @@
         {{ "VALIDANDO CONTRASEÑA" }}
       </div>
     </div>
-    <button type="submit" class="btn-indigo w-full" [disabled]="isLoading">
+    <button type="submit" class="btn-teal w-full" [disabled]="isLoading">
       <ng-template #loadingTemplate class="flex space-x-2">
         <div role="status">
           <svg

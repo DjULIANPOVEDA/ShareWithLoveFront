@@ -2,12 +2,14 @@
   <div class="space-x-2 self-end flex">
     <input
       type="text"
+
       [placeholder]="'PRENDA'"
-      class="text-black outline-none focus:ring-2 focus:ring-indigo-900 text-lg pl-2"
+      class="text-black outline-none focus:ring-2 focus:ring-teal-900 text-lg pl-2"
+
       (keyup)="filterList()"
       #inputSearch
     />
-    <button class="text-white bg-indigo-600 p-2 rounded-lg flex">
+    <button class="text-white bg-teal-600 p-2 rounded-lg flex">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -58,7 +60,7 @@
             {{ cloth.name }}
           </th>
           <td class="px-6 py-4">{{ cloth.size }}</td>
-          <td *ngIf="user | async" class="px-6 py-4 space-x-2">
+          <!-- <td *ngIf="user | async" class="px-6 py-4 space-x-2">
             <button
               [swal]="{
                     title: 'HOME.TABLE.USER',
@@ -91,40 +93,7 @@
 
               <p>{{ "ACTIONS.VIEW" }}</p>
             </button>
-
-            <button
-              [swal]="{
-                    title: 'HOME.TABLE.USER',
-                    html:'<p>'+'<b>'+('REGISTER.USER_NAME')+': </b>'+cloth.donate.username+'</p>'+
-                    '<p>'+'<b>'+('REGISTER.PHONE_NUMBER')+': </b>'+cloth.donate.phone+'</p>'+
-                    '<p>'+'<b>'+('REGISTER.EMAIL_ADDRESS')+': </b>'+cloth.donate.email+'</p>'+
-                    '<p>'+'<b>'+('REGISTER.ADDRESS')+': </b>'+cloth.donate.address+'</p>',
-                  }"
-              class="bg-teal-400 text-white py-1 px-4 rounded-lg hover:bg-teal-700 flex space-x-2 text-sm font-semibold justify-center items-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-
-              <p>{{ "ACTIONS.VIEW" }}</p>
-            </button>
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </table>

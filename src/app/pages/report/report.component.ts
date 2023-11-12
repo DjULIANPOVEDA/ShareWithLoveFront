@@ -30,7 +30,6 @@ export class ReportComponent {
     });
     this.clothService.report().subscribe((report) => {
       this.report = report;
-      console.log(report);
     });
   }
 }

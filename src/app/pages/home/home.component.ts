@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { Cloth } from 'src/app/models/Cloth';
@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   @ViewChild('inputSearch') inputSearch!: ElementRef;
   $cloths?: Observable<Cloth[]>;
   cloths: Cloth[] = [];
@@ -30,6 +30,7 @@ export class HomeComponent {
   }
   syncCloths(): void {
     this.$cloths?.subscribe((res) => {
+      console.log(res);
       this.cloths = res;
       this.clothsFiltered = res;
     });
