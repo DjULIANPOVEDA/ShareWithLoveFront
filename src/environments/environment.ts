@@ -1,3 +1,3 @@
 export const environment = {
-  api: 'https://localhost:7208/api',
+  api: 'http://www.sharewithlove.somee.com/api',
 };
