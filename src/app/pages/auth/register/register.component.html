@@ -5,7 +5,7 @@
     [formGroup]="registerForm"
   >
     <h2 class="text-center text-2xl font-bold">
-      {{ "REGISTER" }}
+      {{ "REGISTRO" }}
     </h2>
     <div
       *ngIf="message"
@@ -16,7 +16,7 @@
           : 'bg-red-200 text-red-800 border border-red-800'
       "
     >
-      {{ "REGISTER." + message.message }}
+      {{ "REGISTRADO." + message.message }}
     </div>
     <div class="flex flex-col space-y-2">
       <label for="userName">{{ "NOMBRE" }}:</label>
@@ -34,7 +34,7 @@
         "
         class="text-red-500"
       >
-        {{ "VALIDATORS.ISREQUIRED.USER_NAME" }}
+        {{ "VALIDANDO NOMBRE" }}
       </div>
     </div>
     <div class="flex flex-col space-y-2">
@@ -53,7 +53,7 @@
         "
         class="text-red-500"
       >
-        {{ "VALIDATORS.ISREQUIRED.PASSWORD" }}
+        {{ "VALIDANDO EL CORREO" }}
       </div>
     </div>
     <div class="flex flex-col space-y-2">
@@ -72,7 +72,7 @@
         "
         class="text-red-500"
       >
-        {{ "VALIDATORS.ISREQUIRED.PHONE" }}
+        {{ "VALIDANDO EL TELEFONO" }}
       </div>
     </div>
     <div class="flex flex-col space-y-2">
@@ -91,7 +91,7 @@
         "
         class="text-red-500"
       >
-        {{ "VALIDATORS.ISREQUIRED.EMAIL" }}
+        {{ "VALIDANDO CORREO" }}
       </div>
     </div>
     <div class="flex flex-col space-y-2">
@@ -110,7 +110,7 @@
         "
         class="text-red-500"
       >
-        {{ "VALIDATORS.ISREQUIRED.ADDRESS" }}
+        {{ "VALIDANDO LA DIRECCION" }}
       </div>
     </div>
     <button type="submit" class="btn-teal w-full">
@@ -132,7 +132,7 @@
               fill="currentFill"
             />
           </svg>
-          <span class="text-white">{{ "ACTIONS.LOADING" }}</span>
+          <span class="text-white">{{ "REGISTRANDO" }}</span>
         </div>
       </ng-template>
       <ng-container *ngIf="!isLoading; else loadingTemplate">{{
