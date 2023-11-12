@@ -18,6 +18,11 @@ import { ChartModule } from 'primeng/chart';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
+import { UserComponent } from './pages/user/user.component';
+import { RegisterClothComponent } from './pages/register-cloth/register-cloth.component';
+import { ReportComponent } from './pages/report/report.component';
+import { AviableClothesComponent } from './pages/report/aviable-clothes/aviable-clothes.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,11 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    InventoryComponent,
+    UserComponent,
+    RegisterClothComponent,
+    ReportComponent,
+    AviableClothesComponent,
   ],
   imports: [
     BrowserModule,

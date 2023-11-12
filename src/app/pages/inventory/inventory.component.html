@@ -1,0 +1,132 @@
+<div class="mt-6 space-y-3 flex flex-col">
+  <div class="space-x-2 self-end flex">
+    <input
+      type="text"
+      [placeholder]="'HEADER.SEARCH_BOOK'"
+      class="text-black outline-none focus:ring-2 focus:ring-indigo-900 text-lg pl-2"
+      (keyup)="filterList()"
+      #inputSearch
+    />
+    <button class="text-white bg-indigo-600 p-2 rounded-lg flex">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+        />
+      </svg>
+      {{ "ACTIONS.SEARCH" }}
+    </button>
+  </div>
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-slate-200">
+        <tr>
+          <th scope="col" class="px-6 py-3">
+            {{ "HOME.TABLE.NAME" }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ "HOME.TABLE.AUTHOR" }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ "HOME.TABLE.PUBLISHER" }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ "HOME.TABLE.STATUS" }}
+          </th>
+          <th *ngIf="user | async" scope="col" class="px-6 py-3">
+            {{ "HOME.TABLE.USER" }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let cloth of clothsFiltered"
+          class="bg-white border-b -800 hover:bg-gray-50"
+        >
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+          >
+            {{ cloth.name }}
+          </th>
+          <td class="px-6 py-4">{{ cloth.size }}</td>
+          <td *ngIf="user | async" class="px-6 py-4 space-x-2">
+            <button
+              [swal]="{
+                    title: 'HOME.TABLE.USER',
+                    html:'<p>'+'<b>'+('REGISTER.USER_NAME')+': </b>'+cloth.owner.username+'</p>'+
+                    '<p>'+'<b>'+('REGISTER.PHONE_NUMBER')+': </b>'+cloth.owner.phone+'</p>'+
+                    '<p>'+'<b>'+('REGISTER.EMAIL_ADDRESS')+': </b>'+cloth.owner.email+'</p>'+
+                    '<p>'+'<b>'+('REGISTER.ADDRESS')+': </b>'+cloth.owner.address+'</p>',
+                  }"
+              class="bg-teal-400 text-white py-1 px-4 rounded-lg hover:bg-teal-700 flex space-x-2 text-sm font-semibold justify-center items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <p>{{ "ACTIONS.VIEW" }}</p>
+            </button>
+
+            <button
+              [swal]="{
+                    title: 'HOME.TABLE.USER',
+                    html:'<p>'+'<b>'+('REGISTER.USER_NAME')+': </b>'+cloth.donate.username+'</p>'+
+                    '<p>'+'<b>'+('REGISTER.PHONE_NUMBER')+': </b>'+cloth.donate.phone+'</p>'+
+                    '<p>'+'<b>'+('REGISTER.EMAIL_ADDRESS')+': </b>'+cloth.donate.email+'</p>'+
+                    '<p>'+'<b>'+('REGISTER.ADDRESS')+': </b>'+cloth.donate.address+'</p>',
+                  }"
+              class="bg-teal-400 text-white py-1 px-4 rounded-lg hover:bg-teal-700 flex space-x-2 text-sm font-semibold justify-center items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <p>{{ "ACTIONS.VIEW" }}</p>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
