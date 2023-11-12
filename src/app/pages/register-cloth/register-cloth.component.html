@@ -5,7 +5,7 @@
     [formGroup]="registrarclothForm"
   >
     <h2 class="text-center text-2xl font-bold">
-      {{ "NEWBOOK.TITLE" }}
+      {{ "DONACIONES" }}
     </h2>
     <div
       *ngIf="message"
@@ -19,13 +19,13 @@
       {{ "NEWBOOK." + message.message }}
     </div>
     <div class="flex flex-col space-y-2">
-      <label for="name">{{ "NEWBOOK.BNAME" }}:</label>
+      <label for="name">{{ "PRENDA" }}:</label>
       <input
         class="p-2 border focus:border-teal-500 outline-none border-teal-100"
         id="name"
         formControlName="name"
         type="text"
-        placeholder="100 años de soledad"
+        placeholder="Escriba si es una patalon o camisa "
       />
       <div
         *ngIf="
@@ -34,18 +34,18 @@
         "
         class="text-red-500"
       >
-        {{ "VALIDATORS.ISREQUIRED.BNAME" }}
+        {{ "INGRESE LA PRENDA" }}
       </div>
     </div>
 
     <div class="flex flex-col space-y-2">
-      <label for="size">{{ "NEWBOOK.AUTHOR" }}:</label>
+      <label for="size">{{ "TALLA" }}:</label>
       <input
         class="p-2 border focus:border-teal-500 outline-none border-teal-100"
         id="size"
-        formControlName="size"
+        formControlName="Talla de la prenda"
         type="text"
-        placeholder="Gabriel García Márquez"
+        placeholder="TALLA"
       />
       <div
         *ngIf="
@@ -54,7 +54,7 @@
         "
         class="text-red-500"
       >
-        {{ "VALIDATORS.ISREQUIRED.AUTHOR" }}
+        {{ "INGRESE LA TALLA DE LA PRENDA" }}
       </div>
     </div>
 
@@ -86,7 +86,7 @@
           </div>
         </ng-template>
         <ng-container *ngIf="!isLoading; else loadingTemplate">{{
-          "ACTIONS.NEWBOOK"
+          "ACEPTAR"
         }}</ng-container>
       </button>
     </div>
