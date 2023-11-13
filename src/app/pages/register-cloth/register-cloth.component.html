@@ -16,7 +16,7 @@
           : 'bg-red-200 text-red-800 border border-red-800'
       "
     >
-      {{ "NEWBOOK." + message.message }}
+      {{ message.message }}
     </div>
     <div class="flex flex-col space-y-2">
       <label for="name">{{ "PRENDA" }}:</label>
@@ -43,7 +43,7 @@
       <input
         class="p-2 border focus:border-teal-500 outline-none border-teal-100"
         id="size"
-        formControlName="Talla de la prenda"
+        formControlName="size"
         type="text"
         placeholder="TALLA"
       />
@@ -82,7 +82,7 @@
                 fill="currentFill"
               />
             </svg>
-            <span class="text-white">{{ "ACTIONS.LOADING" }}</span>
+            <span class="text-white">{{ "Cargando..." }}</span>
           </div>
         </ng-template>
         <ng-container *ngIf="!isLoading; else loadingTemplate">{{

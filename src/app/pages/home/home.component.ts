@@ -46,12 +46,12 @@ export class HomeComponent implements OnInit {
     this.clothService.ReceiveCloth(clothId).subscribe(
       (res) => {
         if (res) {
-          this.toastr.success('success');
+          this.toastr.success('La prenda ha sido donada');
           this.syncCloths();
-        } else this.toastr.error('error');
+        } else this.toastr.error('No se ha completo la donación');
       },
       (err) => {
-        this.toastr.error('error');
+        this.toastr.error('No se ha completo la donación');
       }
     );
   }

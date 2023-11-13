@@ -34,14 +34,16 @@ export class RegisterComponent {
       (res) => {
         this.message = {
           isSuccess: res,
-          message: res ? 'SUCCESS' : 'FAILEND',
+          message: res
+            ? 'Se ha completado el registro'
+            : 'Ha ocurrido un error al registrar el usuario',
         };
         this.isLoading = false;
       },
       (err) => {
         this.message = {
           isSuccess: false,
-          message: 'FAILEND',
+          message: 'Ha ocurrido un error al registrar el usuario',
         };
         this.isLoading = false;
       }

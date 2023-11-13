@@ -33,7 +33,7 @@ export class LoginComponent {
       (err) => {
         this.message = {
           isSuccess: false,
-          message: 'USER_PASSWORD_INCORRECT',
+          message: 'Usuario o Contraseña incorrecta',
         };
         this.isLoading = false;
       }

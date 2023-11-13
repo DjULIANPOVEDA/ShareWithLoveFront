@@ -42,12 +42,12 @@ export class RegisterClothComponent {
         if (res) {
           this.message = {
             isSuccess: true,
-            message: 'SUCCESS',
+            message: 'Se ha registrado la prenda',
           };
         } else {
           this.message = {
             isSuccess: true,
-            message: 'FAILEND',
+            message: 'ocurrio un error al intentar registrar la prenda',
           };
         }
         this.isLoading = false;
@@ -55,7 +55,7 @@ export class RegisterClothComponent {
       (err) => {
         this.message = {
           isSuccess: true,
-          message: 'FAILEND',
+          message: 'ocurrio un error al intentar registrar la prenda',
         };
         this.isLoading = false;
       }
