@@ -1,3 +1,3 @@
 export const environment = {
-  api: 'http://www.sharewithlove.somee.com/api',
+  api: 'https://www.sharewithlove.somee.com/api',
 };
